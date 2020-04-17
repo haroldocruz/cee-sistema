@@ -1,0 +1,165 @@
+<div id="alerta"></div>
+
+<div class="row hidden-print">
+    <div class="col-xs-12">
+        <h2 class><i class="fa fa-bullseye"></i> Metas</h2>
+    </div>
+</div>
+
+<div class="row hidden-print">
+    <div class=" col-sm-6 col-xs-12">
+        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#metaModal" ng-click="x=null">
+            <i class="fa fa-plus"></i>
+            Criar novo
+        </button>
+        <br><br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+            <input class="form-control" type="text" ng-model="filtro" placeholder="Filtrar">
+        </div>
+    </div>
+</div>
+<br>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" ng-repeat="item in itemList | filter: filtro track by $index"
+        ng-click="profileItem(item, $index)">
+        <!-- <div class="panel panel-default" ng-repeat="item in itemList | filter: filtro track by $index"> -->
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <span class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                    data-target="#item{{item._id}}" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span class="pull-left"><i class="fa fa-angle-double-right"></i> Meta {{item.codigo}}</span>
+                            <a ng-hide="item.idFav" ng-click="createFav(item._id)">
+                                <span class="pull-right"><i class="far fa-star"></i></span>
+                            </a>
+                            <a ng-show="item.idFav" ng-click="removeFav(item.idFav)">
+                                <span class="pull-right"><i class="fas fa-star"></i></span>
+                            </a>
+                            <span class="pull-right small">
+                                {{ (coordName.length > 22) ? coordName.slice(0,21) + "..." : coordName}}&nbsp;&nbsp;
+                                <!-- {{ (item._equipe._coordenador.nome.length > 22) ? item._equipe._coordenador.nome.slice(0,21) + "..." : item._equipe._coordenador.nome}}&nbsp;&nbsp; -->
+                            </span>
+                        </div>
+                    </div>
+                </span>
+            </h4>
+        </div>
+        <div id="item{{item._id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 text-justify">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class=""><i class="fa fa-info"></i> Informações</span>
+                            </div>
+                            <div class="panel-body">
+                                <b>Texto da meta:</b> {{item.descricao}}
+                                <br>
+                                <b>Observações:</b> {{item.observacao}}
+                                <br>
+                                <b>Prazo original:</b> {{item.prazo.original }}
+                                <br>
+                                <b>Prazo alternativo:</b> {{item.prazo.alternativo }}
+                                <br>
+                                <b>Indicadores:</b> {{(!item._indicador)? 0 : item._indicador.length }}
+                                <br>
+                                <b>Estratégias:</b> {{(!item._estrategia)? 0 : item._estrategia.length }}
+                                <hr>
+                                <div class="text-right">
+                                    <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                                        data-target="#metaModal">
+                                        <i class="fa fa-edit"></i> Editar
+                                    </button>
+                                    <button class="btn btn-xs btn-danger" ng-click="deleteItem(item)">
+                                        <i class="fa fa-trash-alt"></i> Excluir
+                                    </button>
+                                </div>
+                                <br>
+                                <!-- <a ui-sref="app.theme.metaProfile({param1:item})" class="btn btn-default btn-block"> -->
+                                <a href="/app/meta/{{item.codigo}}" class="btn btn-default btn-block">
+                                    Ver mais sobre esta meta
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class=""><i class="fa fa-rocket"></i> Concluído</span>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="col-xs-12">
+                                    <!-- <canvas id="meta_chart{{item.codigo}}" width="100" height="100"></canvas> -->
+                                    <canvas id="meta_chart{{item.codigo}}"></canvas>
+                                </div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--* metaModal -->
+<div class="modal fade" id="metaModal" tabindex="-1" role="dialog" aria-labelledby="metaModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="metaModalLabel" ng-hide="x._id">Inserir</h4>
+                <h4 class="modal-title" id="metaModalLabel" ng-show="x._id">Alterar</h4>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li class="col-md-4">
+                                Código:
+                                <input type="text" inputmode="numeric" pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                                    ng-readonly="detail" ng-model="x.codigo" class="form-control"
+                                    placeholder="ex: 01..09..10">
+                            </li>
+                            <li class="col-md-12">
+                                Descrição:
+                                <textarea rows="6" ng-disabled="detail" ng-model="x.descricao" class="form-control"
+                                    placeholder=""></textarea>
+                            </li>
+                            <li class="col-md-6">
+                                Prazo oficial:
+                                <input type="date" ng-model="x.prazo.oficial" class="form-control"
+                                    placeholder="ano">
+                            </li>
+                            <li class="col-md-6">
+                                Prazo extra-oficial:
+                                <input type="date" ng-model="x.prazo.extraOficial" class="form-control"
+                                    placeholder="ano">
+                            </li>
+                            <li class="col-md-12">
+                                Observações:
+                                <textarea rows="6" ng-disabled="detail" ng-model="x.observacao" class="form-control"
+                                    placeholder="Relato sintético (opcional)"></textarea>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createItem(x)"
+                        ng-hide="x._id">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem(x)"
+                        ng-show="x._id">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <span class=""><i class="fa fa-lock"></i> Regras de Acesso</span>
+    </div>
+
+    <div class="panel-body ips-font-monospace">
+        <b>Nível de acesso:</b><br> {{item.accessLevel}} <br>
+        <b>Visibilidade (escopo):</b><br> {{"Ação"}} <br><br>
+        <!-- <b>Nível de acesso.......:</b> {{item._accessLevel.name}} <br><br> -->
+        <!-- <b>REGRAS DE PERMISSÃO DE ACESSO AOS MÓDULOS</b> <br><br> -->
+        <table class="table table-bordered table-striped table-hover">
+            <label>REGRAS DE PERMISSÃO DE ACESSO AOS MÓDULOS</label>
+            <thead>
+                <tr>
+                    <th>Módulos</th>
+                    <th class="text-center">C</th>
+                    <th class="text-center">R</th>
+                    <th class="text-center">U</th>
+                    <th class="text-center">D</th>
+                    <!-- <th class="text-center">F</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="r in x.role">
+                    <th>{{ x.role[$index]._modelName }}</th>
+                    <td class="text-center">{{ x.role[$index].create }}</td>
+                    <td class="text-center">{{ x.role[$index].read }}</td>
+                    <td class="text-center">{{ x.role[$index].update }}</td>
+                    <td class="text-center">{{ x.role[$index].delete }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

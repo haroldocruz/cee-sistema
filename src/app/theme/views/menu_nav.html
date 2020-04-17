@@ -1,0 +1,89 @@
+<!-- * BOTÃO TOOGLE DO MENU -->
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <!-- * NOME DO SISTEMA -->
+    <!-- <a id="titulo_principal" class="navbar-brand" href="#">!INSTRUMENTOS</a> -->
+    <select class="form-control" name="" id="">
+        <option value="">SISTEMA</option>
+        <option value="">VERIFICAÇÃO</option>
+    </select>
+</div>
+
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <!-- * NOME DO USUÁRIO LOGADO -->
+            <li class="text-center">
+                <a>
+                    <!-- <span class="small">({{rootUser.accessLevel}})</span> -->
+                    <!-- <br> -->
+                    <i class="fa fa-user fa-4x"></i>
+                    <br>
+                    <span>{{rootUser.name}}</span>
+                </a>
+            </li>
+            <!-- * BOTAO DE LOGIN -->
+            <li class="text-center" ng-if="!rootUser._id">
+                <a class="ips-login" ui-sref="app.login"> <i class="fa fa-sign-in-alt"></i> Login</a>
+            </li>
+            <!-- * CAMPO DE BUSCA RÁPIDA -->
+            <li class="sidebar-search">
+                <form id="formSearchRapid">
+                    <div class="input-group custom-search-form">
+                        <input id="searchFast" type="text" ng-model="expressao" class="form-control" autocomplete="off"
+                            placeholder="Search... (CTRL+s)">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" ng-click="searchFast(expressao)">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </li>
+
+            <!-- * MENU DE NAVEGAÇÃO PRINCIPAL -->
+            <li><a ui-sref="home"><i class="fa fa-home"></i> Home</a> </li>
+            <li><a ui-sref="dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard</a> </li>
+            <li>&nbsp;</li>
+            <li><a ui-sref="instrumentProfile"><i class="fa fa-angle-double-right"></i> Acessar instrumentos</a> </li>
+            <li><a ui-sref="team.list"><i class="fa fa-angle-double-right"></i> Equipes</a> </li>
+            <li>&nbsp;</li>
+            <li><a ui-sref="institution"><i class="fa fa-angle-double-right"></i> Instituições</a> </li>
+            <!-- <li><a ui-sref=""><i class="fa fa-angle-double-right"></i> Mantida</a> </li>
+            <li><a ui-sref=""><i class="fa fa-angle-double-right"></i> Mantenedora</a> </li> -->
+            <li>&nbsp;</li>
+            <li><a ui-sref="instrument"><i class="fa fa-angle-double-right"></i> Instrumentos</a> </li>
+            <li><a ui-sref="dimension.list"><i class="fa fa-angle-double-right"></i> Dimensões</a> </li>
+            <li><a ui-sref="indicator"><i class="fa fa-angle-double-right"></i> Indicadores</a> </li>
+            <li><a ui-sref="critery"><i class="fa fa-angle-double-right"></i> Critérios</a> </li>
+            <li>&nbsp;</li>
+            <li><a ui-sref="user"><i class="fa fa-angle-double-right"></i> Usuários</a> </li>
+            <li><a ui-sref="settings.list"><i class="fa fa-cogs"></i> Configurações</a> </li>
+            <!-- <li><a ui-sref="upload"><i class="fa fa-cogs"></i> Upload</a>
+            </li> -->
+        </ul>
+        <!-- <div class="btn-group-vertical" role="group">
+            <button class="btn btn-default" ui-sref="home"><i class="fa fa-home"></i> Home </button>
+            <button class="btn btn-default" ui-sref="dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard </button>
+            <button class="btn btn-default">&nbsp;</button>
+            <button class="btn btn-default" ui-sref="instrumentProfile"><i class="fa fa-angle-double-right"></i> Acessar instrumentos </button>
+            <button class="btn btn-default" ui-sref="team.list"><i class="fa fa-angle-double-right"></i> Equipes </button>
+            <button class="btn btn-default">&nbsp;</button>
+            <button class="btn btn-default" ui-sref="institution"><i class="fa fa-angle-double-right"></i> Instituições </button>
+            <button class="btn btn-default">&nbsp;</button>
+            <button class="btn btn-default" ui-sref="instrument"><i class="fa fa-angle-double-right"></i> Instrumentos </button>
+            <button class="btn btn-default" ui-sref="dimension.list"><i class="fa fa-angle-double-right"></i> Dimensões </button>
+            <button class="btn btn-default" ui-sref="indicator"><i class="fa fa-angle-double-right"></i> Indicadores </button>
+            <button class="btn btn-default" ui-sref="critery"><i class="fa fa-angle-double-right"></i> Critérios </button>
+            <button class="btn btn-default">&nbsp;</button>
+            <button class="btn btn-default" ui-sref="user"><i class="fa fa-angle-double-right"></i> Usuários </button>
+            <button class="btn btn-default" ui-sref="settings.list"><i class="fa fa-cogs"></i> Configurações </button>
+        </div> -->
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

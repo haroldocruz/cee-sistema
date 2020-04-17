@@ -1,0 +1,135 @@
+<!-- courseModal -->
+<div class="modal fade" id="courseModal" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button> -->
+                <div class="col-md-6">
+                    <h4 class="modal-title" id="courseModalLabel">
+                        <span ng-if="!x._id">Inserir</span>
+                        <span ng-if="x._id">Alterar</span>
+                    </h4>
+                </div>
+
+                <div class="col-md-6 input-group">
+                    <span class="input-group-addon">
+                        Status:
+                    </span>
+                    <select id="status" ng-model="x.status" ng-options="o for o in statusEnum track by o"
+                        class="form-control"></select>
+                </div>
+            </div>
+            <form id="form-course-modal">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li class="col-xs-12">
+                                <span>Inserir documento de criação do curso:</span>
+                                <input type="file" ng-model="x.name" class="form-control">
+                            </li>
+                            <li class="col-xs-12">
+                                Nome do curso:
+                                <input ng-model="x.name" class="form-control">
+                            </li>
+                            <li class="col-xs-12">
+                                Descrição:
+                                <textarea rows="6" ng-model="x.descricao" class="form-control"
+                                    placeholder=""></textarea>
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Área:
+                                <select ng-model="x.area" ng-options="o.name for o in areaList track by o._id"
+                                    class="form-control"></select>
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Grau:
+                                <select ng-model="x.grau" ng-options="o.name for o in grauList track by o._id"
+                                    class="form-control"></select>
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Modalidade:
+                                <select ng-model="x.modalidade"
+                                    ng-options="o.name for o in modalidadeList track by o._id"
+                                    class="form-control"></select>
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Duração:
+                                <input type="text" ng-model="x.duracao" class="form-control">
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Periodicidade de oferta:
+                                <select ng-model="x.periodicidade"
+                                    ng-options="o for o in periodicidadeList track by o._id"
+                                    class="form-control"></select>
+                            </li>
+                            <li class="col-md-4">
+                                Data de início da oferta:
+                                <input ng-model="x.dataIniOferta" class="form-control">
+                            </li>
+                            <li class="col-md-4">
+                                Quantidade de egressos:
+                                <input ng-model="x.egressos" class="form-control">
+                            </li>
+                            <li class="col-md-4">
+                                Quantidade de vagas:
+                                <input ng-model="x.vagas" class="form-control">
+                            </li>
+                            <li class="col-xs-12">
+                                Observações:
+                                <textarea rows="6" ng-model="x.observacao" class="form-control"
+                                    placeholder=""></textarea>
+                            </li>
+
+                            <li class="col-xs-12">
+                                <hr>
+                            </li>
+                            <li class="col-xs-12">
+                                <button ng-hide="x._address">
+                                    <span>Vincular endereço</span>
+                                </button>
+                                <span ng-hide="x._address"> <i class="text-danger small">Nenhum endereço
+                                        vinculado</i></span>
+                                <span ng-show="x._address">Endereço vinculado</span>
+                            </li>
+
+                            <li class="col-xs-12">
+                                <hr>
+                            </li>
+                            <li class="col-xs-12">
+                                <button ng-hide="x._coordenador">
+                                    <span>Vincular coordenador</span>
+                                </button>
+                                <span ng-hide="x._coordenador"> <i class="text-danger small">Nenhum coordenador
+                                        vinculado</i></span>
+                                <span ng-show="x._coordenador"> Coordenador vinculado</span>
+                            </li>
+
+                            <li class="col-xs-12">
+                                <hr>
+                            </li>
+                            <li class="col-xs-12">
+                                <button>
+                                    <span>Vincular docentes</span>
+                                </button>
+                                <span ng-hide="x._docente"> <i class="text-danger small">Nenhum docente
+                                        vinculado</i></span>
+                                <span ng-show="x._docente"><br>Docente vinculado</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="createItem('acao', x)"
+                        ng-if="!x._id">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem('acao', x)"
+                        ng-if="x._id">Atualizar</button>
+                </div>
+            </form id="form-meta-modal">
+        </div>
+    </div>
+</div>

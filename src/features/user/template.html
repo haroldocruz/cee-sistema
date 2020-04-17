@@ -1,0 +1,248 @@
+<div id="alerta"></div>
+
+<div class="row hidden-print">
+    <div class="col-xs-12">
+        <h2 class><i class="fa fa-users"></i> Usuários</h2>
+    </div>
+</div>
+
+<div class="row hidden-print">
+    <div class="col-xs-6">
+        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#userModal" ng-click="x=null">
+            <i class="fa fa-plus"></i>
+            Criar novo
+        </button>
+        <br><br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+            <input class="form-control" type="text" ng-model="filtro" placeholder="Filtrar">
+        </div>
+    </div>
+</div>
+<br>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" ng-repeat="item in itemList | filter: filtro track by $index">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                    data-target="#item{{item._id}}" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <i class="fa fa-angle-double-right"></i>
+                            {{item.name}}
+                        </div>
+                        <div class="col-xs-4 text-right small">
+                            {{item.accessLevel}}
+                        </div>
+                    </div>
+                </a>
+            </h4>
+        </div>
+        <div id="item{{item._id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-7 text-justify">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                                <span class=""><i class="fa fa-info"></i> Informações</span>
+                            </div>
+
+                            <div class="panel-body ips-font-monospace">
+                                <p>
+                                    <b>Nome....:</b> {{item.name}} <br>
+                                    <b>Telefone:</b> {{item.phone}} <br>
+                                    <b>E-mail..:</b> {{item.email}}
+                                </p>
+                                <hr>
+                                <div class="text-right">
+                                    <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                                        data-target="#userModal">
+                                        <i class="fa fa-edit"></i> Editar
+                                    </button>
+                                    <button class="btn btn-xs btn-danger" ng-click="deleteItem(item)">
+                                        <i class="fa fa-trash-alt"></i> Excluir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                                <span class=""><i class="fa fa-lock"></i> Regras de Acesso</span>
+                            </div>
+
+                            <div class="panel-body ips-font-monospace">
+                                <b>Nível de acesso:</b><br> {{item.accessLevel}} <br>
+                                <b>Visibilidade (escopo):</b><br> {{"Ação"}} <br><br>
+                                <!-- <b>Nível de acesso.......:</b> {{item._accessLevel.name}} <br><br> -->
+                                <!-- <b>REGRAS DE PERMISSÃO DE ACESSO AOS MÓDULOS</b> <br><br> -->
+                                <table class="table table-bordered table-striped table-hover">
+                                    <label>REGRAS DE PERMISSÃO DE ACESSO AOS MÓDULOS</label>
+                                    <thead>
+                                        <tr>
+                                            <th>Módulos</th>
+                                            <th class="text-center">C</th>
+                                            <th class="text-center">R</th>
+                                            <th class="text-center">U</th>
+                                            <th class="text-center">D</th>
+                                            <th class="text-center">F</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>{{item._accessLevel.role[0]._modelName}}</th>
+                                            <td class="text-center">{{item._accessLevel.role[0].create}}</td>
+                                            <td class="text-center">{{item._accessLevel.role[0].read}}</td>
+                                            <td class="text-center">{{item._accessLevel.role[0].update}}</td>
+                                            <td class="text-center">{{item._accessLevel.role[0].delete}}</td>
+                                            <td class="text-center">S</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Usuário</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">A</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Meta</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">A</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estratégia</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">A</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ação</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center">A</td>
+                                            <td class="text-center">C</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="panel-body ips-font-monospace" style="min-width: 300px;">
+                                <ul class="ips-list">
+                                    <li class="list-group-item" style="background-color: cadetblue;">
+                                        <b>Sistema</b>
+                                        <ul class="ips-list">
+                                            <li class="list-group-item" style="background-color: rgb(221, 150, 99);">
+                                                <b>Geral</b>
+                                                <ul class="ips-list">
+                                                    <li class="list-group-item" style="background-color: rgb(118, 116, 240);">
+                                                        <b>Metas</b>
+                                                        <ul class="ips-list">
+                                                            <li class="list-group-item" style="background-color: rgb(146, 196, 10);">
+                                                                <b>Estratégias</b>
+                                                                <ul class="ips-list">
+                                                                    <li class="list-group-item" style="background-color: rgb(69, 178, 182);">
+                                                                        <b>Ações</b>
+                                                                        <ul class="ips-list">
+                                                                            <li class="list-group-item" style="background-color: rgb(91, 129, 199);">
+                                                                                <b>Mínimo</b>
+                                                                            </li>
+                                                                        </ul class="ips-list">
+                                                                    </li>
+                                                                </ul class="ips-list">
+                                                            </li>
+                                                        </ul class="ips-list">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ./panel-body-->
+        </div> <!-- ./panel-collapse-->
+    </div> <!-- ./panel-default-->
+</div>
+
+<!-- userModal -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="userModalLabel">Inserir/alterar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <ul class="list-unstyled">
+                        <li class="col-xs-8">
+                            Nome:
+                            <input type="text" ng-model="x.name" class="form-control"
+                                placeholder="Digite seu nome completo">
+                        </li>
+                        <li class="col-xs-4">
+                            Nivel de acesso:
+                            <select id="level" ng-model="x.accessLevel" ng-options="i for i in levelList track by i"
+                                class="form-control"></select>
+                        </li>
+                        <li class="col-xs-6">
+                            Senha:
+                            <input type="text" ng-model="x.password" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            CPF:
+                            <input type="text" ng-model="x.cpf" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Repetir senha:
+                            <input type="text" ng-model="x.password" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            E-mail:
+                            <input type="text" ng-change="x.email = x.email.toLowerCase()" ng-model="x.email"
+                                class="form-control" />
+                        </li>
+                        <li class="col-xs-3">
+                            DDI (+55 BR):
+                            <input type="text" ng-model="x.ddi" class="form-control" placeholder="+55">
+                        </li>
+                        <li class="col-xs-3">
+                            DDD (63 TO):
+                            <input type="text" ng-model="x.ddd" class="form-control" placeholder="63">
+                        </li>
+                        <li class="col-xs-6">
+                            Telefone:
+                            <input type="text" ng-model="x.phone" class="form-control">
+                        </li>
+                        <li class="col-xs-12">
+                            Descrição:
+                            <textarea rows="6" ng-model="x.description" class="form-control"></textarea>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createItem(x)"
+                    ng-hide="x._id">Salvar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem(x)"
+                    ng-show="x._id">Atualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

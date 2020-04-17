@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <div class="panel-heading text-center">
+        <span class=""><i class="fa fa-info"></i> Informações</span>
+    </div>
+    <div class="panel-body ips-font-monospace">
+        <b>Coordenador(a):</b> {{item._coordenador.name}}
+        <br>
+        <b>Telefone de referência:</b> {{item.telefone}}
+        <br>
+        <b>Email de referência:</b> {{item.email }}
+        <br>
+        <b>Descrição da referência:</b> {{item.descricao }}
+        <br>
+        <b>Observações:</b> {{ item.observacao }}
+        <br>
+        <b>Número de membros:</b> {{(!item._membros)? 0 : item._membros.length }}
+        <hr>
+        <div class="text-right">
+            <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                data-target="#teamModal">
+                <i class="fa fa-edit"></i> Editar
+            </button>
+            <!-- <button class="btn btn-xs btn-danger" ng-click="deleteItem(item)">
+                <i class="fa fa-trash-alt"></i> Excluir
+            </button> -->
+        </div>
+        <br>
+        <!-- <a href="/app/equipe/{{item.codigo}}" class="btn btn-default btn-block">
+            Ver mais sobre esta equipe
+        </a> -->
+    </div>
+</div>

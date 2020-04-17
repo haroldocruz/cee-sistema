@@ -1,0 +1,64 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="text-center" ng-show="isLoadingItem">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+
+    <!-- * TABELA -->
+    <div class="panel panel-default" ng-show="!isLoadingItem">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th class="text-left"> Nome da mantida: </th>
+                    <td class="text-left">
+                        <span ng-hide="true">Centro de ensino Pedro de Alcântara Francisco Antônio de Paula </span>
+                        <span ng-hide="false">
+                            <a ui-sref="maintained">
+                                <i class="text-danger small">Insira o nome da mantida</i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-left"> Nome da mantenedora: </th>
+                    <td class="text-left">
+                        <span ng-hide="true">{{  }}</span>
+                        <span ng-hide="false">
+                            <a ui-sref="maintainer">
+                                <i class="text-danger small">Insira o nome da mantenedora</i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-left"> Procurador institucional: </th>
+                    <td class="text-left">
+                        <span ng-hide="true">{{  }}</span>
+                        <span ng-hide="false">
+                            <a ui-sref="procurator">
+                                <i class="text-danger small">Vincular procurador institucional</i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-left"> Auxiliar institucional: </th>
+                    <td class="text-left">
+                        <span ng-hide="true">{{  }}</span>
+                        <span ng-hide="false">
+                            <a ui-sref="auxiliary">
+                                <i class="text-danger small">Vincular auxiliar institucional</i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>

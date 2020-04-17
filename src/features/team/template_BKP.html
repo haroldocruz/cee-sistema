@@ -1,0 +1,213 @@
+<div id="alerta"></div>
+
+<div class="row hidden-print">
+    <div class="col-xs-12">
+        <h2 class><i class="fa fa-users"></i> Equipes</h2>
+    </div>
+</div>
+
+<div class="row hidden-print">
+    <div class="col-xs-6">
+        <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModal" ng-click="x=null">
+            <i class="fa fa-plus"></i>
+            Criar novo
+        </button>
+        <br><br>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+            <input class="form-control" type="text" ng-model="filtro" placeholder="Filtrar">
+        </div>
+    </div>
+</div>
+<br>
+<div id="mudar" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default" ng-repeat="item in itemList | filter: filtro track by $index"
+        ng-click="findStrategy(item, $index)">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <span class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                    data-target="#item{{item._id}}" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="pull-left"><i class="fa fa-angle-double-right"></i> Equipe
+                                {{item.coordCommittee.name}}</span>
+                            <!-- <a ng-hide="item.idFav" ng-click="createFav(item._id)">
+                                <span class="pull-right"><i class="far fa-star"></i></span>
+                            </a>
+                            <a ng-show="item.idFav" ng-click="removeFav(item.idFav)">
+                                <span class="pull-right"><i class="fas fa-star"></i></span>
+                            </a> -->
+                            <!-- <br> <i class="small">{{item.code}}</i> -->
+                        </div>
+                    </div>
+                </span>
+            </h4>
+        </div>
+        <div id="item{{item._id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6 text-justify">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading text-center">
+                                <span class=""><i class="fa fa-info"></i> Informações</span>
+                            </div>
+
+                            <div class="panel-body">
+                                <b>Comissão coordenadora:</b> {{item.coordCommittee.name}}
+                                <br>
+                                <b>Ato legal (comissão):</b> {{item.coordCommittee.legalAct}}
+                                <br><br>
+                                <b>Equipe técnica:</b> {{item.tecnicalTeam.name}}
+                                <br>
+                                <b>Ato legal (equipe):</b> {{item.tecnicalTeam.legalAct}}
+                                <br><br>
+                                <b>Telefone de referência:</b> {{item.contact.phone }}
+                                <br>
+                                <b>E-mail de referência:</b> {{item.contact.email }}
+                                <br>
+                                <b>Descrição da referência:</b> {{item.contact.description }}
+                                <br><br>
+                                <!-- <button class="btn btn-xs btn-info"><i class="fa fa-info"></i> Detalhes</button> -->
+                                <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <i class="fa fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-xs btn-danger" ng-click="deleteItem(item)"><i
+                                        class="fa fa-trash-alt"></i> Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <i class="fa fa-users"></i><span class=""> Membros</span>
+                                <!-- <a ui-sref="app.theme.estrategia({param1:item})" class="pull-right">Ver Mais</a> -->
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body" ng-if="!memberList">
+                                <i class="fa fa-spinner fa-pulse"></i>
+                            </div>
+                            <div class="panel-body" ng-if="memberList">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item" ng-repeat="i in memberList track by $index">
+                                        <i class="fa fa-user"></i> Membro {{i.code}}
+                                        <span class="pull-right text-muted small"><em>{{i.code}}</em>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!-- /.list-group -->
+                                <!-- <a ui-sref="app.theme.estrategia({param1:item})" class="btn btn-default btn-block">Ver
+                                    Mais</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Inserir/alterar meta</h4>
+            </div>
+            <form action="" autocomplete="off">
+                <div class="modal-body">
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li class="col-md-6">
+                                Comissão coordenadora:
+                                <input type="text" ng-model="x.coordCommittee.name" class="form-control"
+                                    placeholder="Nome da comissão">
+                            </li>
+                            <li class="col-md-6">
+                                Ato legal (comissão):
+                                <input type="text" ng-model="x.coordCommittee.legalAct" class="form-control"
+                                    placeholder="">
+                            </li>
+                            <li class="col-md-6">
+                                Equipe técnica:
+                                <input type="text" ng-model="x.tecnicalTeam.name" class="form-control"
+                                    placeholder="Nome da equipe técnica">
+                            </li>
+                            <li class="col-md-6">
+                                Ato legal (equipe):
+                                <input type="text" ng-model="x.tecnicalTeam.legalAct" class="form-control"
+                                    placeholder="">
+                            </li>
+                            <li class="col-md-6">
+                                Telefone de referência:
+                                <input type="text" inputmode="tel" pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                                    ng-model="x.contact.phone" class="form-control" placeholder="">
+                            </li>
+                            <li class="col-md-6">
+                                E-mail de referência:
+                                <input type="text" inputmode="email" ng-model="x.contact.email" class="form-control"
+                                    placeholder="">
+                            </li>
+                            <li class="col-md-12">
+                                Descrição da referência:
+                                <textarea rows="3" ng-model="x.description" class="form-control"
+                                    placeholder="Descrever o responsável|setor|contato da comissão"></textarea>
+                            </li>
+                            <li class="col-md-8">
+                                Inserir membro:
+                                <select ng-model="memberSelected" ng-change="insertMember()" class="form-control">
+                                <!-- <select ng-model="memberSelected" class="form-control"> -->
+                                        <!-- <option value="" ng-selected="memberSelected === null">Default</option> -->
+                                        <option ng-repeat="m in memberList track by m._id" ng-value="m">{{m.name.full}}</option>
+                                    </select>
+                                <!-- <select id="member" class="form-control" ng-model="memberSelected"
+                                    ng-options="i.name.full for i in memberList track by i._id"
+                                    ng-change="insertMember()"></select> -->
+                            </li>
+                            <li class="col-md-4">
+                                Categoria:
+                                <select id="category" ng-model="categorySelected"
+                                    ng-options="i.name for i in categoryList track by $index"
+                                    class="form-control"></select>
+                            </li>
+                            <hr class="hr">
+                            <li class="col-md-12" ng-if="memberSelectedList.length > 0">
+                                <table class="table table-hover">
+                                    <label>Membros inseridos:</label>
+                                    <tr class="" ng-repeat="m in memberSelectedList track by m._id">
+                                        <td>
+                                            <span class="">{{m.name.full}}</span>
+                                        </td>
+                                        <td>
+                                            <span class="pull-right text-muted"><a href ng-click="removeMember(m)">
+                                                    <i class="fa fa-trash fa-fw"></i></a></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <hr>
+                            <li class="col-md-12">
+                                Observações:
+                                <textarea rows="3" ng-model="x.observation" class="form-control"
+                                    placeholder="Alguma observação extra"></textarea>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default">Limpar</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createItem(x)"
+                        ng-hide="x._id">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem(x)"
+                        ng-show="x._id">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

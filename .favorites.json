@@ -1,0 +1,20 @@
+[
+    {
+        "type": "Directory",
+        "name": "c:\\MSOM\\PROJETOS\\SIG-PEE\\frontend\\src\\features",
+        "parent_id": null,
+        "fsPath": "c:\\MSOM\\PROJETOS\\SIG-PEE\\frontend\\src\\features",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "vEazdCBo8w4sgpn5"
+    },
+    {
+        "type": "File",
+        "name": "c:\\MSOM\\PROJETOS\\SIG-PEE\\frontend\\src\\services\\api.service.axios.js",
+        "parent_id": null,
+        "fsPath": "c:\\MSOM\\PROJETOS\\SIG-PEE\\frontend\\src\\services\\api.service.axios.js",
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "gk4TmFSr5cfx6yzJ"
+    }
+]

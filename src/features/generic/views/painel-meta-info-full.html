@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <span class=""><i class="fa fa-info"></i> Informações</span>
+    </div>
+
+    <div class="panel-body ips-font-monospace">
+        <p>
+            <span><b>Descrição:</b> <br>{{item.descricao}} </span>
+            <br>
+            <span><b>Id:</b> <br>{{item._id}} </span>
+            <br>
+            <span><b>Prazo oficial:</b> <br>{{item.prazo.oficial | date: "dd/MM/yyyy"}} </span>
+            <br>
+            <span><b>Prazo extra-oficial:</b> <br>{{item.prazo.extraOficial | date: "dd/MM/yyyy"}} </span>
+            <br>
+            <span><b>Observações:</b> <br>{{item.observacao}} </span>
+        </p>
+        <hr>
+        <div class="text-right">
+            <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                data-target="#metaModal">
+                <i class="fa fa-edit"></i> Editar
+            </button>
+            <button class="btn btn-xs btn-danger" ng-click="deleteItem('meta', item)">
+                <i class="fa fa-trash-alt"></i> Excluir
+            </button>
+        </div>
+    </div>
+</div>

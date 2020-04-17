@@ -1,0 +1,65 @@
+<!-- instrumentModal -->
+<div class="modal fade" id="instrumentModal" tabindex="-1" role="dialog" aria-labelledby="instrumentModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button> -->
+                <div class="col-md-6">
+                    <h4 class="modal-title" id="instrumentModalLabel">
+                        <span ng-if="!x._id">Inserir</span>
+                        <span ng-if="x._id">Alterar</span>
+                    </h4>
+                </div>
+
+                <div class="col-md-6 input-group">
+                    <span class="input-group-addon">
+                        Status:
+                    </span>
+                    <select id="status" ng-model="x.status" ng-options="o for o in statusEnum track by o"
+                        class="form-control"></select>
+                </div>
+            </div>
+            <form id="form-instrument-modal">
+                <div class="modal-body">
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li class="col-md-4">
+                                Código:
+                                <input ng-model="x.orderCode" class="form-control">
+                            </li>
+                            <li class="col-xs-6 col-md-4">
+                                Modalidade:
+                                <select ng-model="x.modality" ng-change="" ng-options="o for o in ['Ensino Básico', 'Ensino Superior']"
+                                    class="form-control"></select>
+                            </li>
+                            <li class="col-md-12">
+                                Ato:
+                                <input ng-model="x.act" class="form-control">
+                            </li>
+                            <li class="col-md-12">
+                                Descrição:
+                                <textarea rows="6" ng-model="x.description" class="form-control"
+                                    placeholder=""></textarea>
+                            </li>
+                            <li class="col-md-12">
+                                Observações:
+                                <textarea rows="6" ng-model="x.observation" class="form-control"></textarea>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="createItem(x)"
+                        ng-if="!x._id">Salvar</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem(x)"
+                        ng-if="x._id">Atualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+
+module.exports = [{
+    '_id': '01adf86a8d6f',
+    'firstName': 'João',
+    'lastName': 'Deus',
+    'fullName': 'João de Deus',
+    'email': 'email@email.com',
+    'phone': '(63) 9 8458-9691',
+    'nivel': 'administrador',
+    'status': 'ativo',
+    'description': '(três) anos de idade até o final da vigência deste PEE/TO.',
+}, {
+    '_id': '02adf86a8d6g',
+    'firstName': 'Maria',
+    'lastName': 'Cruz',
+    'fullName': 'Maria da Cruz',
+    'email': 'email@email.com',
+    'phone': '(63) 9 8458-9691',
+    'nivel': 'gerente',
+    'status': 'ativo',
+    'description': '(três) anos de idade até o final da vigência deste PEE/TO.',
+}, {
+    '_id': '03adf86a8d6h',
+    'firstName': 'Paulo',
+    'lastName': 'Pereira',
+    'fullName': 'Paulo Pereira',
+    'email': 'email@email.com',
+    'phone': '(63) 9 8458-9691',
+    'nivel': 'editor',
+    'status': 'ativo',
+    'description': '(três) anos de idade até o final da vigência deste PEE/TO.',
+}];

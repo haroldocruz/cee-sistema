@@ -1,0 +1,240 @@
+<div id="alerta"></div>
+
+<br><br>
+<div class="panel panel-default">
+
+    <!--* panel-heading -->
+    <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+            <div class="row">
+                <div class="col-xs-8">
+                    <i class="fa fa-bullseye"></i>
+                    Dimensão {{item.codigo}}
+                </div>
+            </div>
+        </h4>
+    </div>
+
+    <!--* panel-body FAIL -->
+    <div class="panel-body ips-font-monospace" ng-if="!item">
+        <span>Sem informações da dimension</span>
+    </div>
+
+    <!--* panel-body OK -->
+    <div class="panel-body" ng-if="item">
+        <div class="row">
+
+            <!--* painel-info-full -->
+            <div class="col-xs-12 col-lg-6 text-justify">
+                <div ui-view="painel-info-full"></div>
+            </div>
+
+            <!--* painel-indicador -->
+            <div class="col-xs-12 col-lg-6">
+                <div ui-view="painel-indicador"></div>
+            </div>
+
+            <!--* painel-estrategia -->
+            <div class="col-xs-12">
+                <div ui-view="painel-estrategia"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view="modal-dimension"></div>
+<div ui-view="modal-estrategia"></div>
+<div ui-view="modal-indicador"></div>
+
+
+
+<!-- ================================================================== -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" ng-hide="x._id">Inserir</h4>
+                <h4 class="modal-title" id="myModalLabel" ng-show="x._id">Alterar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <ul class="list-unstyled">
+                        <li class="col-xs-12 text-uppercase">
+                            Dados pessoais <br><br>
+                        </li>
+                        <li class="col-xs-12">
+                            Nome:
+                            <input type="text" ng-readonly="false" ng-model="x.name" class="form-control"
+                                placeholder="Digite seu nome completo">
+                        </li>
+                        <li class="col-xs-6">
+                            CPF:
+                            <input type="text" ng-model="x.cpf" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Data de nascimento:
+                            <input type="date" ng-model="x.birthday" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            RG:
+                            <input type="text" ng-model="x.rg.number" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Data de expedição:
+                            <input type="date" ng-model="x.rg.expeditionDate" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-4">
+                            Órgão expedidor:
+                            <input type="text" ng-model="x.rg.dispatcherAgency" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-2">
+                            UF:
+                            <select id="uf" ng-model="ufRgSelected" ng-options="i for i in ufEnum"
+                                class="form-control"></select>
+                        </li>
+
+
+                        <li class="col-xs-12 text-uppercase">
+                            <hr>
+                            Dados de contato <br><br>
+                        </li>
+                        <li class="col-xs-12">
+                            E-mail:
+                            <input type="email" ng-disabled="detail" ng-change="x.email = x.email.toLowerCase()"
+                                ng-model="x.email" class="form-control" />
+                        </li>
+                        <li class="col-xs-6">
+                            Telefone:
+                            <input type="tel" ng-disabled="detail" ng-model="x.phone" class="form-control">
+                        </li>
+                        <li class="col-xs-6">
+                            Tipo:
+                            <select id="typePhone" ng-model="typePhoneSelected" ng-options="i for i in typePhoneEnum"
+                                class="form-control"></select>
+                        </li>
+
+
+                        <li class="col-xs-12 text-uppercase">
+                            <hr>
+                            Endereço <br><br>
+                        </li>
+                        <li class="col-xs-10">
+                            Logradouro:
+                            <input type="text" ng-disabled="detail" ng-model="x.address.place" class="form-control">
+                        </li>
+                        <li class="col-xs-2">
+                            Numero:
+                            <input type="text" ng-disabled="detail" ng-model="x.address.number" class="form-control">
+                        </li>
+                        <li class="col-xs-6">
+                            Bairro:
+                            <input type="text" ng-disabled="detail" ng-model="x.address.district" class="form-control">
+                        </li>
+                        <li class="col-xs-4">
+                            Cidade:
+                            <input type="text" ng-disabled="detail" ng-model="x.address.city" class="form-control">
+                        </li>
+                        <li class="col-xs-2">
+                            UF:
+                            <select id="uf" ng-model="ufAddressSelected" ng-options="i for i in ufEnum"
+                                class="form-control"></select>
+                        </li>
+                        <li class="col-xs-12">
+                            Complemento:
+                            <input type="text" ng-disabled="detail" ng-model="x.address.complement"
+                                class="form-control">
+                        </li>
+
+
+                        <li class="col-xs-12 text-uppercase">
+                            <hr>
+                            Dados de login <br><br>
+                        </li>
+                        <li class="col-xs-6">
+                            Senha:
+                            <input type="password" ng-readonly="false" ng-model="x.password" class="form-control"
+                                placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Repetir senha:
+                            <input type="password" ng-readonly="false" ng-model="x.password" class="form-control"
+                                placeholder="">
+                        </li>
+                        <li class="col-xs-12 text-uppercase">
+                            <hr>
+                        </li>
+                        <li class="col-xs-12">
+                            Descrição:
+                            <textarea rows="6" ng-disabled="detail" ng-model="x.description"
+                                class="form-control"></textarea>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createItem(x)"
+                    ng-hide="x._id">Salvar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem(x)"
+                    ng-show="x._id">Atualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="proExpModal" tabindex="-1" role="dialog" aria-labelledby="proExpModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" ng-hide="pe._id">Inserir</h4>
+                <h4 class="modal-title" id="myModalLabel" ng-show="pe._id">Alterar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <ul class="list-unstyled">
+                        <li class="col-xs-12">
+                            Nome da Empresa:
+                            <input type="text" ng-model="pe.companyName" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Função:
+                            <input type="text" ng-model="pe.office" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Forma de contrato:
+                            <select id="uf" ng-model="contractFormSelected" ng-options="i for i in contractFormEnum"
+                                class="form-control"></select>
+                        </li>
+                        <li class="col-xs-6">
+                            Data de admissão:
+                            <input type="date" ng-model="pe.startDate" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-6">
+                            Data de saída:
+                            <input type="date" ng-model="pe.endDate" class="form-control" placeholder="">
+                        </li>
+                        <li class="col-xs-12">
+                            Tarefas executadas:
+                            <textarea rows="6" ng-model="pe.taskPerformed" class="form-control"></textarea>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-default" ng-hide="pe._id">Limpar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createProExp(pe, item._id)"
+                    ng-hide="pe._id">Salvar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateProExp(pe)"
+                    ng-show="pe._id">Atualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

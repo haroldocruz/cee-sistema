@@ -1,0 +1,17 @@
+#login_titulo_principal {
+  font-family: compa;
+  font-size  : 50pt;
+}
+
+.img-thumbs {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  /*imagem default*/
+  background-image: url('../../public/img/no-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  cursor: pointer;
+}

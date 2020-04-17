@@ -1,0 +1,30 @@
+<!-- * HEADER -->
+<!-- <div class="row hidden-print">
+    <div class="col-xs-12">
+
+        <h2><i class="fa fa-fonticons"></i> Instituições</h2>
+
+    </div>
+</div> -->
+<br>
+<div class="row hidden-print">
+    <div class="col-xs-12">
+
+        <!-- * NAV [horizon] -->
+        <div id="ips-list-watch" class="btn-group" role="group">
+            <button class="btn btn-default active" ui-sref="institution">Instituição</button>
+            <button class="btn btn-default" ui-sref="maintained">Mantida</button>
+            <button class="btn btn-default" ui-sref="maintainer">Mantenedora</button>
+            <button class="btn btn-default" ui-sref="course">Cursos</button>
+            <button class="btn btn-default" ui-sref="procurator">Procurador</button>
+            <button class="btn btn-default" ui-sref="auxiliary">Auxiliares</button>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<div ui-view="body"></div>
+
+<div ui-view="modal"></div>
+<div ui-view="modal-evidencia"></div>
