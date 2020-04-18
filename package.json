@@ -1,5 +1,5 @@
 {
-  "name": "sigpee",
+  "name": "ceesistema",
   "version": "1.1.0",
   "description": "A project ...",
   "scripts": {
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haroldocruz/sig-pee.git"
+    "url": "git+https://github.com/haroldocruz/cee-sistema.git"
   },
   "author": "Haroldo Cruz",
   "license": "MIT",
-  "homepage": "https://github.com/haroldocruz/sig-pee",
+  "homepage": "https://github.com/haroldocruz/cee-sistema",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
     "angular": "^1.7.0",
@@ -72,11 +72,11 @@
     "webpack-dev-server": "^2.11.2"
   },
   "bugs": {
-    "url": "https://github.com/haroldocruz/sig-pee/issues"
+    "url": "https://github.com/haroldocruz/cee-sistema/issues"
   },
   "main": "karma.conf.js",
   "keywords": [
-    "sig",
-    "pee"
+    "cee",
+    "sistema"
   ]
 }
