@@ -1,7 +1,8 @@
 
 
 controller.$inject = ['$injector', '$rootScope', '$scope', '$state', '$transitions'];
-export default function controller($injector, $scope, $rootScope, $state, $transitions) {
+export default function controller($injector, $scope, $rootScope, $state, $transitions, msg) {
+
     /*
         $transitions.onBefore({ to: 'app.**' }, function (trans) { });
         $transitions.onSuccess({ to: 'app.**' }, function (trans) { });
@@ -37,6 +38,8 @@ export default function controller($injector, $scope, $rootScope, $state, $trans
         });
     */
     (async function () {
+        console.log($scope.msg)
+        console.log(msg)
 
         const FN = require('../utils/alerts');
         const DB = require('../services/api.service.axios');

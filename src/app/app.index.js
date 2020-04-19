@@ -42,5 +42,6 @@ const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, FEATURES)
     .config(require('./app.route').default)
-    .directive('app', layout)
-    .controller('AppCtrl', require('./app.controller').default)
+    // .directive('app', layout)
+    .directive('app', require('./app.directive').default)
+    // .controller('AppCtrl', require('./app.controller').default)

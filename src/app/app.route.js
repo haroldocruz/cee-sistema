@@ -10,7 +10,7 @@ export default function routing($urlRouterProvider, $locationProvider, $statePro
         'abstract': '!0', 
         // views: {
         //     '': { 
-                template: require('./app.template.html') 
+        //         template: require('./app.template.html') 
         //     }
         // }
     });
