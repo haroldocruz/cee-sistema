@@ -65,9 +65,9 @@ Os dados de cada instituição são exibidos, sinteticamente, na tela. É exibid
     * *(Obtido previamente)*
 * `Nome da `[`Mantenedora`](#mantenedora)
     * *(Obtido previamente)*
-* `Nome do `[`Procurador institucional`](#Procurador_institucional)
+* `Nome do `[`Procurador institucional`](#Procurador%20institucional)
     * *(Obtido previamente)*
-* `Nome dos `[`Auxiliares institucionais`](#Auxiliar_institucional)
+* `Nome dos `[`Auxiliares`](#Auxiliares)
     * *(Obtido previamente)*
 
 ## Mantida
