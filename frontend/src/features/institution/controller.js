@@ -34,7 +34,7 @@ function controller($injector, $scope, $state) {
         })
 
 
-        // * EXPORTS
+        // * IMPORTS
         var FN = await require('../../utils/alerts');
         $scope.situacaoEnum = require('../../utils/enumerations/SituacaoEnum')()
         $scope.statusEnum = require('../../utils/enumerations/StatusEnum')()
