@@ -45,16 +45,16 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 # Casos de uso
 
 * [Instituições](#instituições)
-    * [Instituição](#Instituição)
+    * [Instituição](#instituição)
     * [Mantida](#mantida)
     * [Mantenedora](#mantenedora)
     * [Cursos](#cursos)
-    * [Procurador Institucional](#Procurador&nbspInstitucional)
-    * [Auxiliares](#Auxiliares)
-* [Instrumentos](#Instrumentos)
-* [Dimensões](#Dimensões)
-* [Indicadores](#Indicadores)
-* [Critérios](#Critérios)
+    * [Procurador Institucional](#procurador-institucional)
+    * [Auxiliares](#auxiliares)
+* [Instrumentos](#instrumentos)
+* [Dimensões](#dimensoes)
+* [Indicadores](#indicadores)
+* [Critérios](#criterios)
 
 # Instituições
 
@@ -62,88 +62,88 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 
 Os dados de cada instituição são exibidos, sinteticamente, na tela. É exibido os seguintes dados:
 * `Nome da `[`Mantida`](#mantida)
-    * *(Obtido previamente)*
+    * _(Obtido previamente)_
 * `Nome da `[`Mantenedora`](#mantenedora)
-    * *(Obtido previamente)*
-* `Nome do `[`Procurador institucional`](#Procurador%20institucional)
-    * *(Obtido previamente)*
-* `Nome dos `[`Auxiliares`](#Auxiliares)
-    * *(Obtido previamente)*
+    * _(Obtido previamente)_
+* `Nome do `[`Procurador institucional`](#procurador-institucional)
+    * _(Obtido previamente)_
+* `Nome dos `[`Auxiliares`](#auxiliares)
+    * _(Obtido previamente)_
 
 ## Mantida
 
 Todos os dados da mantida são exibidos na tela, e possui os seguintes atributos:
 * `Código`
-    * *único*
-    * *gerado automaticamente*
-    * *gerado uma única vez (não permite atualização)*
+    * _único_
+    * _gerado automaticamente_
+    * _gerado uma única vez (não permite atualização)_
 * `Nome`
-    * *obrigatório*
+    * _obrigatório_
 * `Sigla`
-    * *(caso exista)*
+    * _(caso exista)_
 * `Telefones`
     * _obrigatório (pelo menos um)_
 * `Endereço principal`
-    * *obrigatório*
-    * *(Obtido previamente)*
+    * _obrigatório_
+    * _(Obtido previamente)_
 * `Outros endereços`
-    * *(caso haja)*
+    * _(caso haja)_
 
 ## Mantenedora
 
 Todos os dados da mantenedora são exibidos na tela, e possui os seguintes atributos:
 * `Código`
-    * *único*
-    * *gerado automaticamente*
-    * *gerado uma única vez (não permite atualização)*
+    * _único_
+    * _gerado automaticamente_
+    * _gerado uma única vez (não permite atualização)_
 * `Nome`
-    * *obrigatório*
+    * _obrigatório_
 * `Sigla`
-    * *(caso exista)*
+    * _(caso exista)_
 * `Telefones`
     * _obrigatório (pelo menos um)_
 * `Endereço principal`
-    * *obrigatório*
-    * *(Obtido previamente)*
+    * _obrigatório_
+    * _(Obtido previamente)_
 * `Outros endereços`
-    * *(caso haja)*
+    * _(caso haja)_
 
 ## Cursos
 
 Os dados são exibidos na tela, e possuem os seguintes atributos:
 * `Nome`
-    * *único (salvo se modalidades diferentes)*
-    * *obrigatório*
+    * _único (salvo se modalidades diferentes)_
+    * _obrigatório_
 * `Área`
-    * *obrigatório*
-    * *(Obtido previamente)*
+    * _obrigatório_
+    * _(Obtido previamente)_
 * `Modalidade`
-    * *obrigatório*
-    * *(Obtido previamente)*
+    * _obrigatório_
+    * _(Obtido previamente)_
 
 ## Procurador Institucional
 
 Os dados são exibidos na tela, e possuem os seguintes atributos:
 * `Nome completo`
-    * *obrigatório*
+    * _obrigatório_
 * `Telefone`
-    * *obrigatório*
+    * _obrigatório_
 * `Email`
-    * *obrigatório*
+    * _obrigatório_
 * `Endereço`
-    * *recomendado*
+    * _recomendado_
 
 ## Auxiliares
 
 Os dados são exibidos na tela, e possuem os seguintes atributos:
 * `Nome completo`
-    * *obrigatório*
+    * _obrigatório_
 * `Telefone`
-    * *obrigatório*
+    * _obrigatório_
 * `Email`
-    * *obrigatório*
+    * _obrigatório_
 * `Endereço`
-    * *recomendado*
+    * _recomendado_
 
 # License
 

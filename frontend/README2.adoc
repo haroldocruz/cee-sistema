@@ -15,7 +15,7 @@ $ npm start
 What you need to run this app:
 
 - `node` and `npm`
-- Ensure you're running Node (v4.1.x+) and NPM (2.14.x+)
+- Ensure you're running Node (v14.0.x+) and NPM (6.14.x+)
 
 === Instaling
 - Install the dependencies with `npm`:
