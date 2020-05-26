@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
-    "angular": "^1.7.0",
+    "angular": "^1.7.9",
     "angular-ui-router": "^1.0.20",
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
