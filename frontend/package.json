@@ -83,5 +83,8 @@
     "sistema"
   ],
   "config": {
+    "commitizen": {
+      "path": "./frontend/node_modules/cz-conventional-changelog"
+    }
   }
 }

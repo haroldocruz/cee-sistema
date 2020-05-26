@@ -38,7 +38,7 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 ## Dependencies
 
 What you need to run this app:
-* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
+* `node` and `npm` (Use [NVM](https://github.com/creationix/nvm) or [n](https://github.com/tj/n))
 * Ensure you're running Node (`v14.0.x`+) and NPM (`v6.14.x`+)
 
 ## Installing
