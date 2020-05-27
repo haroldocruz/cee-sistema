@@ -5,7 +5,7 @@
 
 ### Quick start
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.index.js`](/src/app/app.index.js)
+> Clone/Download the repo then edit `app.js` inside [`/frontend/src/app/app.index.js`](/frontend/src/app/app.index.js)
 
 ```bash
 # clone our repo
