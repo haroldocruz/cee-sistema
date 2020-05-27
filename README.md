@@ -2,16 +2,23 @@
 # CEE - Sistema de Supervisão
 
 
-![Made For](https://img.shields.io/badge/MADE%20FOR-MSOM%2EINFO-blue.svg?style=for-the-badge)
+>![Made For](https://img.shields.io/badge/MADE%20FOR-MSOM%2EINFO-blue.svg?style=for-the-badge)
 ![GitHub license](https://img.shields.io/github/license/haroldocruz/cee-sistema?style=for-the-badge)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
-![HTML5](https://img.shields.io/badge/-HTML5-blue.svg?style=for-the-badge&logo=HTML5&color=E34F26&logoColor=fff)
+>![HTML5](https://img.shields.io/badge/-HTML5-blue.svg?style=for-the-badge&logo=HTML5&color=E34F26&logoColor=fff)
 ![CSS3](https://img.shields.io/badge/-CSS3-blue.svg?style=for-the-badge&logo=CSS3&color=2195F1&logoColor=fff)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-blue.svg?style=for-the-badge&logo=Bootstrap&color=563D7C&logoColor=fff)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-blue.svg?style=for-the-badge&logo=JavaScript&color=F7DF1E&logoColor=fff)
-![AngularJS](https://img.shields.io/badge/-AngularJS-blue.svg?style=for-the-badge&logo=AngularJS&color=B32833&logoColor=fff)
-![NodeJS](https://img.shields.io/badge/-NodeJS-blue.svg?style=for-the-badge&logo=Node.JS&color=8CC03D&logoColor=fff)
+![AngularJS](https://img.shields.io/badge/-AngularJS-blue.svg?style=for-the-badge&logo=AngularJS&color=E23237&logoColor=fff)
+![Webpack](https://img.shields.io/badge/-Webpack-blue.svg?style=for-the-badge&logo=Webpack&color=8DD6F9&logoColor=fff)
+![Babel](https://img.shields.io/badge/-Babel-blue.svg?style=for-the-badge&logo=Babel&color=F9DC3E&logoColor=fff)
+
+>![NodeJS](https://img.shields.io/badge/-NodeJS-blue.svg?style=for-the-badge&logo=Node.JS&color=8CC03D&logoColor=fff)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-blue.svg?style=for-the-badge&logo=MongoDB&color=579335&logoColor=fff)
+![Json](https://img.shields.io/badge/-Json-blue.svg?style=for-the-badge&logo=Json&color=000&logoColor=fff)
+![Json Web Tokens](https://img.shields.io/badge/-JWT-blue.svg?style=for-the-badge&logo=Json%20Web%20Tokens&color=000&logoColor=fff)
+![TypeScript](https://img.shields.io/badge/-TypeScript-blue.svg?style=for-the-badge&logo=TypeScript&color=007ACC&logoColor=fff)
 
 ### Quick start
 
