@@ -13,6 +13,13 @@
 ![NodeJS](https://img.shields.io/badge/-NodeJS-blue.svg?style=for-the-badge&logo=Node.JS&color=383&labelColor=fff)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-blue.svg?style=for-the-badge&logo=MongoDB&color=383&labelColor=fff)
 
+![HTML5](https://img.shields.io/badge/-HTML5-blue.svg?style=for-the-badge&logo=HTML5&color=c60&labelColor=fff)
+![CSS3](https://img.shields.io/badge/-CSS3-blue.svg?style=for-the-badge&logo=CSS3&color=55f&logoColor=fff)
+![JavaScript](https://img.shields.io/badge/-JavaScript-blue.svg?style=for-the-badge&logo=JavaScript&color=F7DF1E&logoColor=fff)
+![AngularJS](https://img.shields.io/badge/-AngularJS-blue.svg?style=for-the-badge&logo=AngularJS&color=f33&logoColor=fff)
+![NodeJS](https://img.shields.io/badge/-NodeJS-blue.svg?style=for-the-badge&logo=Node.JS&color=383&labelColor=fff)
+![MongoDB](https://img.shields.io/badge/-MongoDB-blue.svg?style=for-the-badge&logo=MongoDB&color=383&labelColor=fff)
+
 ### Quick start
 
 > Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
