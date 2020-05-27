@@ -1,0 +1,20 @@
+{
+    "name": "ceesistema",
+    "version": "1.1.0",
+    "description": "Um projeto do CEE",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/haroldocruz/cee-sistema.git"
+    },
+    "author": "Haroldo Cruz",
+    "license": "MIT",
+    "homepage": "https://github.com/haroldocruz/cee-sistema",
+    "bugs": {
+      "url": "https://github.com/haroldocruz/cee-sistema/issues"
+    },
+    "keywords": [
+      "cee",
+      "sistema"
+    ]
+  }
+  

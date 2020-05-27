@@ -1,11 +1,14 @@
 
 # CEE - Sistema de Supervisão
+
+[![GitHub version](https://badge.fury.io/gh/haroldocruz%2Fcee-sistema.svg)](https://badge.fury.io/gh/haroldocruz%2Fcee-sistema)
 ![GitHub license](https://img.shields.io/github/license/haroldocruz/cee-sistema)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+![Build Status](https://travis-ci.org/haroldocruz/cee-sistema.svg?branch=master)
 
 ### Quick start
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.index.js`](/src/app/app.index.js)
+> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
 
 ```bash
 # clone our repo
