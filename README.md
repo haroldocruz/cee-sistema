@@ -1,10 +1,17 @@
 
 # CEE - Sistema de Supervisão
 
-[![GitHub version](https://badge.fury.io/gh/haroldocruz%2Fcee-sistema.svg)](https://badge.fury.io/gh/haroldocruz%2Fcee-sistema)
-![GitHub license](https://img.shields.io/github/license/haroldocruz/cee-sistema)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![Build Status](https://travis-ci.org/haroldocruz/cee-sistema.svg?branch=master)
+
+![Made For](https://img.shields.io/badge/MADE%20FOR-MSOM%2EINFO-blue.svg?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/haroldocruz/cee-sistema?style=for-the-badge)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+
+![HTML5](https://img.shields.io/badge/-HTML5-blue.svg?style=for-the-badge&logo=HTML5&color=c60&labelColor=fff)
+![CSS3](https://img.shields.io/badge/-CSS3-blue.svg?style=for-the-badge&logo=CSS3&color=55f&labelColor=fff&logoColor=55f)
+![JavaScript](https://img.shields.io/badge/-JavaScript-blue.svg?style=for-the-badge&logo=JavaScript&color=333)
+![AngularJS](https://img.shields.io/badge/-AngularJS-blue.svg?style=for-the-badge&logo=AngularJS&color=f33&labelColor=fff&logoColor=f33)
+![NodeJS](https://img.shields.io/badge/-NodeJS-blue.svg?style=for-the-badge&logo=Node.JS&color=383&labelColor=fff)
+![MongoDB](https://img.shields.io/badge/-MongoDB-blue.svg?style=for-the-badge&logo=MongoDB&color=383&labelColor=fff)
 
 ### Quick start
 
