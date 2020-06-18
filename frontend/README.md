@@ -37,13 +37,18 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 
 # Table of Contents
 
-* [Getting Started](#getting-started)
-    * [Dependencies](#dependencies)
-    * [Installing](#installing)
-    * [Running the app](#running-the-app)
-    * [Developing](#developing)
-    * [Testing](#testing)
-* [License](#license)
+- [CEE - Sistema de Supervisão](#cee---sistema-de-supervisão)
+    - [Quick start](#quick-start)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Dependencies](#dependencies)
+  - [Installing](#installing)
+  - [Running the app](#running-the-app)
+  - [Developing](#developing)
+    - [Build files](#build-files)
+  - [Testing](#testing)
+      - [1. Unit Tests](#1-unit-tests)
+- [License](#license)
 
 # Getting Started
 
@@ -63,7 +68,7 @@ What you need to run this app:
 
 After you have installed all dependencies you can now run the app with:
 ```bash
-npm start
+$ npm start
 ```
 
 It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as [`http://localhost:8080`](http://localhost:8080).
@@ -72,15 +77,26 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ### Build files
 
-* single run: `npm run build`
-* build files and watch: `npm start`
-
+* To build files, single run:
+```bash
+$ npm run build
+```
+* Or, to build files and watch:
+```bash 
+$ npm start
+```
 ## Testing
 
 #### 1. Unit Tests
 
-* single run: `npm test`
-* live mode (TDD style): `npm run test-watch`
+* To single run:
+```bash
+$ npm test
+```
+* Or, to live mode (TDD style): 
+```bash
+$ npm run test-watch
+```
 
 # License
 

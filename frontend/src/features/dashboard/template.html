@@ -1,5 +1,5 @@
 <br>
-<div class="row">
+<div class="row" id="capture2">
 
     <!-- * DIMENSOES -->
     <div class="col-md-6 col-lg-3">
@@ -13,8 +13,8 @@
                         <canvas id="meta_chart" width="100" height="100"></canvas>
                     </div> -->
                     <div class="col-xs-6 text-right">
-                        <div class="huge">{{ (counter.goal.total) ? counter.goal.total : '0' }}</div>
-                        <div>Dimensões</div>
+                        <div class="huge">{{ (counter.maintainer.total) ? counter.course.total : '0' }}</div>
+                        <div>Instituições</div>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     </div> -->
                     <div class="col-xs-6 text-right">
                         <div class="huge">{{ (counter.strategy.total) ? counter.strategy.total : '0' }}</div>
-                        <div>Indicadores</div>
+                        <div>Cursos</div>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,9 @@
             </a>
         </div>
     </div>
-    <div class="col-md-6 col-lg-3">
+
+    <!-- * PERCENTUAL -->
+    <div class="col-md-6 col-lg-3" id="capture">
         <div class="panel panel-red">
             <div class="panel-heading">
                 <div class="row">
@@ -103,28 +105,36 @@
             </a>
         </div>
     </div>
-</div>
 
-<div class="row">
 
-    <!-- * MENSAGENS -->
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <i class="fa fa-envelope fa-fw"></i> <span class="">Mensagens</span>
-            </div>
-            <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
+    <button id="btnPreviewImage" class="btn btn-primary">Preview</button>
+    <button id="btnDownloadImage" class="btn btn-primary">Download</button>
+    <button id="btnPngImage" class="btn btn-primary">Png</button>
+    <button id="btnSvgImage" class="btn btn-primary">Svg</button>
+    <div id="previewImage">
+
     </div>
 
-    <!-- * FAVORITOS -->
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <i class="fa fa-bookmark fa-fw"></i> <span class="">Favoritos</span>
-            </div>
-            <canvas id="document_stats" width="400" height="400"></canvas>
-        </div>
-    </div>
+    <div class="row">
 
-</div>
+        <!-- * MENSAGENS -->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-envelope fa-fw"></i> <span class="">Mensagens</span>
+                </div>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+        <!-- * FAVORITOS -->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bookmark fa-fw"></i> <span class="">Favoritos</span>
+                </div>
+                <canvas id="document_stats" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+    </div>

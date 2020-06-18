@@ -1,13 +1,17 @@
 
+import domToImage from 'dom-to-image';
 
 controller.$inject = ['$injector', '$scope', '$state'];
 export default function controller($injector, $scope, $state) {
 
     (async function () {
+
+        screenshot();
+
         const DB = require('../../services/api.service.axios');
         const statusEnum = require('../../utils/enumerations/StatusEnum')()
 
-        $scope.counter = { goal:{ total: null, done: null}, strategy:{ total: null, done: null}, action:{ total: null, done: null} };
+        $scope.counter = { goal: { total: null, done: null }, strategy: { total: null, done: null }, action: { total: null, done: null } };
         $scope.favoriteList = [];
         $scope.fav = { goalList: [], strategyList: [], actionList: [] };
 
@@ -19,12 +23,12 @@ export default function controller($injector, $scope, $state) {
 
         await DB.readFilter('meta/counter', {}).then((resp) => { $scope.counter.goal.total = resp.data; $scope.$digest(); });
         // await DB.readFilter('meta/counter', {'status': statusEnum.VALIDADO}).then((resp) => { $scope.counter.meta.done = resp.data; $scope.$digest(); })
-        
+
         await DB.readFilter('estrategia/counter', {}).then((resp) => { $scope.counter.strategy.total = resp.data; $scope.$digest(); });
         // await DB.readFilter('estrategia/counter', {'status': statusEnum.VALIDADO}).then((resp) => { $scope.counter.estrategia.done = resp.data; $scope.$digest(); })
-        
+
         await DB.readFilter('acao/counter', {}).then((resp) => { $scope.counter.action.total = resp.data; $scope.$digest(); })
-        await DB.readFilter('acao/counter', {'status': statusEnum.VALIDADO}).then((resp) => { $scope.counter.action.done = resp.data; $scope.$digest(); })
+        await DB.readFilter('acao/counter', { 'status': statusEnum.VALIDADO }).then((resp) => { $scope.counter.action.done = resp.data; $scope.$digest(); })
 
         $scope.percentTotal = percentual($scope.counter.action.done, $scope.counter.action.total, 1); //?implementar
         // $scope.percentTotal = percentual($scope.counter.action.done, $scope.counter.action.total, 1);
@@ -193,16 +197,59 @@ export default function controller($injector, $scope, $state) {
                 options: options
             });
         }
-        
+
         /**
          * @description Calcula o percentual de uma parcial mediante seu montante
          * @param {double} partial parcial de um montante
          * @param {double} total total de um montante
          * @param {int} dec quantidade de casas decimais
          */
-        function percentual (partial, total, dec) {
+        function percentual(partial, total, dec) {
             return (partial * 100 / total).toFixed(dec);
         }
-        
+
     })()
+}
+
+function screenshot() {
+
+    document.querySelector("#btnPreviewImage").addEventListener('click', function () {
+        var node = document.getElementById('capture');
+        domToImage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.querySelector("#previewImage").append(img);
+                // document.body.appendChild(img);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    });
+    document.querySelector("#btnDownloadImage").addEventListener('click', function () {
+        domToImage.toBlob(document.getElementById('capture'))
+            .then(function (blob) {
+                window.saveAs(blob, 'my-node.png');
+            });
+    });
+
+    document.querySelector("#btnPngImage").addEventListener('click', function () {
+        domToImage.toPng(document.getElementById('capture2'))
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'my-image-name.png';
+                link.href = dataUrl;
+                link.click();
+            });
+    });
+
+    document.querySelector("#btnSvgImage").addEventListener('click', function () {
+        domToImage.toSvg(document.getElementById('capture2'))
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'my-image-name.svg';
+                link.href = dataUrl;
+                link.click();
+            });
+    });
 }
