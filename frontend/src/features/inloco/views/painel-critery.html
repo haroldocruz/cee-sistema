@@ -1,8 +1,0 @@
-<div class="list-group">
-    <a href class="list-group-item list-group-item-{{isDone(cri)}}" 
-    ng-repeat="cri in ind._critery | filter:filterCritery track by $index"
-    ng-click="editItem($index, cri)" data-toggle="modal" data-target="#criteryModal">
-        <i class="fa fa-angle-double-right"></i>
-        <span class="bg-info ips-font-monospace">[ {{ (cri.score) ? cri.score : '-'}} ]</span> {{cri.description}}
-    </a>
-</div>
