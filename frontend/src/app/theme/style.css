@@ -1,0 +1,27 @@
+@font-face {
+    font-family: compa;
+    src: url('./fonts/COMPA___.TTF');
+}
+
+#titulo_principal{
+  font-family: compa;
+  font-size: 30pt;
+}
+.principal {
+  font-family: compa;
+}
+.list-style-roman {
+  list-style-type: circle;
+}
+
+/* [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+} */
+
+
+/*myAlert*/
+div.fullscreen { position: absolute; width:100%; height:960px; top: 0; left: 0; background-color: lightblue;}
+.alert{ display: none;}
+.myAlert-top{ position: fixed; top: 5px; left:2%; width: 96%;}
+.myAlert-bottom{ position: fixed; bottom: 5px; left:2%; width: 96%;}
+/*myAlert*/

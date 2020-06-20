@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-6">
+                <i class="fa fa-users"></i><span class=""> Membros</span>
+            </div>
+            <div class="col-xs-6 text-right">
+                <a class="btn btn-xs btn-primary" role="button" data-toggle="modal" data-target="#membrosModal"
+                    ng-click="carregarUsuarios(userList, item)">
+                    <i class="fa fa-plus"></i>
+                    Inserir um membro
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body" ng-if="item._membros.length == 0">
+        <span class="list-group-item text-center">
+            Nenhum membro inserido!
+        </span>
+    </div>
+    <div class="panel-body" ng-if="item._membros.length > 0">
+        <div class="list-group">
+            <!-- <span class="list-group-item" ng-repeat="i in memberList track by $index"> -->
+            <span class="list-group-item" ng-repeat="i in item._membros track by $index">
+                <i class="fa fa-user"></i> {{ i.name }}
+                <span class="pull-right text-muted"><a href ng-click="removerMembro($index, item)">
+                        <i class="fa fa-trash fa-fw"></i></a>
+                </span>
+            </span>
+        </div>
+    </div>
+</div>

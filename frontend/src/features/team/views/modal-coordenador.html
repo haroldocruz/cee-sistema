@@ -1,0 +1,31 @@
+<!-- coordenadorModal -->
+<div class="modal fade" id="coordenadorModal" tabindex="-1" role="dialog" aria-labelledby="coordenadorModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="coordenadorModalLabel" ng-if="!x._id">Inserir</h4>
+                <h4 class="modal-title" id="coordenadorModalLabel" ng-if="x._id">Alterar</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                    <input class="form-control" type="text" ng-model="filtroCoordenadorModal" placeholder="Filtrar">
+                </div>
+                <br>
+                <div class="list-group">
+                    <a href class="list-group-item" data-dismiss="modal"
+                        ng-repeat="i in usersForMemberList | filter:filtroCoordenadorModal track by $index"
+                        ng-click="x._coordenador = i">
+                        <i class="fa fa-user"></i> {{i.name}}
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+            </form>
+        </div>
+    </div>
+</div>

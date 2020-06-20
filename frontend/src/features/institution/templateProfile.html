@@ -1,0 +1,46 @@
+<div id="alerta"></div>
+
+<br><br>
+<div class="panel panel-default">
+
+    <!--* panel-heading -->
+    <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+            <div class="row">
+                <div class="col-xs-8">
+                    <i class="fa fa-bullhorn"></i>
+                    Ação {{meta.codigo}}.{{estrategia.codigo}}.{{item.codigo}}
+                </div>
+            </div>
+        </h4>
+    </div>
+
+    <!--* panel-body LOADING -->
+    <div class="panel-body ips-font-monospace text-center" ng-if="isLoading">
+        <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </div>
+    
+    <!--* panel-body FAIL -->
+    <div class="panel-body ips-font-monospace" ng-if="!item">
+        <span>Sem informações da ação</span>
+    </div>
+
+    <!--* panel-body OK -->
+    <div class="panel-body" ng-if="item">
+        <div class="row">
+
+            <!--* painel-info -->
+            <div class="col-xs-12 col-lg-12 text-justify">
+                <div ui-view="painel-info"></div>
+            </div>
+
+            <!--* painel-acao -->
+            <div class="col-xs-12">
+                <div ui-view="painel-evidencia"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view="modal"></div>
+<div ui-view="modal-evidencia"></div>

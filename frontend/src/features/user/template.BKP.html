@@ -1,0 +1,68 @@
+{{users}}
+<br/>
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="col-lg-12 panel-heading">
+            <div class="col-lg-4"><b>{{colOne.title}}</b></div>
+            <div class="col-lg-8 text-right">
+                Filtrar por:
+                <input type="text" ng-model="filtro">
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <!--<th>Matrícula</th>-->
+                        <th>Nível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="item in items | filter:filtro | itemsPerPage:7" pagination-id="users" ng-click="description(item)">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{item.fullname}}</td>
+                        <!--<td>{{item.matricula}}</td>-->
+                        <td>{{item.nivel}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <dir-pagination-controls max-size="7" direction-links="true" boundary-links="true" pagination-id="users"></dir-pagination-controls>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <span class="status bg-danger" ng-show="status.active">{{status.msg}}</span>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="col-lg-12 panel-heading">
+            <b>{{colTwo.title}}{{colTwo.descr}}</b>
+        </div>
+
+        <br/><br/>
+        <div class="panel-body" style="display: block; font-family: monospace;">
+
+            <button class="btn-xs btn-app" ng-click="toogleOpt('create')">Novo</button>
+            <button class="btn-xs btn-primary" ng-show="detail" ng-click="editItem(x)">Editar</button>
+            <button class="btn-xs btn-danger" ng-show="detail" ng-click="deleteItem(x)">Excluir</button>
+            <button class="btn-xs btn-success" ng-show="create" ng-click="createItem(x)">Cadastrar</button>
+            <button class="btn-xs btn-success" ng-show="edit" ng-click="updateItem(x)">Atualizar</button>
+
+            <ul class="list-unstyled">
+                <li class="col-md-12">ID: { {{ (x._id) ? x._id : '000000000000000000000000'}} }</li>
+                <li class="col-md-12">Nome: <input type="text" ng-change="x.fullname = x.fullname.toUpperCase()" ng-readonly="detail" ng-model="x.fullname" class="form-control"></li>
+                <li class="col-md-6">CPF: <input type="text" id="input-cpf" ng-disabled="detail" ng-model="x.cpf" class="form-control" mask="999.999.999-99" mask-clean="true" placeholder="___.___.___-__"></li>
+                <li class="col-md-6">RG: <input type="text" id="input-rg" ng-disabled="detail" ng-model="x.rg" class="form-control" mask='999' mask-repeat='5' mask-clean="true"></li>
+                <li class="col-md-6">Nível: <input type="text" id="input-nivel" ng-disabled="detail" ng-model="x.nivel" class="form-control"></li>
+
+            </ul>
+        </div><!-- /.panel-body -->
+        <div class="panel-footer text-center">
+        </div>
+    </div><!-- /.panel -->
+</div><!-- /.col -->

@@ -1,0 +1,73 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="text-center" ng-show="isLoadingItem">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+
+    <h5><b>Modalidade: {{ itemListEB[0].modality }} ({{ itemListEB.length }})</b></h5>
+    <!-- * TABELA -->
+    <div class="panel panel-default" ng-show="!isLoadingItem">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Ato</th>
+                    <!-- <th>Modalidade</th> -->
+                    <th class="text-center">Descrição</th>
+                    <th class="text-center">Acessar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in itemListEB | filter: filtro track by $index">
+                    <td class="text-center"> {{item.orderCode}} </td>
+                    <td class="text-center"> {{item.act}} </td>
+                    <!-- <td class="text-center"> {{item.modality}} </td> -->
+                    <td class="text-justify"> {{item.description}} </td>
+                    <td class="text-center">
+                        <a href="#" title="Editar" data-toggle="modal" data-target="#instrumentModal" ng-click="editItem(item)"><i class="fas fa-edit"></i></a><br>
+                        <a href="#" title="Excluir" ng-click="deleteItem('instrument', item)"><i class="fas fa-trash text-danger"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <h5><b>Modalidade: {{ itemListES[0].modality }} ({{ itemListES.length }})</b></h5>
+    <!-- * TABELA -->
+    <div class="panel panel-default" ng-show="!isLoadingItem">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Ato</th>
+                    <!-- <th>Modalidade</th> -->
+                    <th class="text-center">Descrição</th>
+                    <th class="text-center">Acessar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in itemListES | filter: filtro track by $index">
+                    <td class="text-center"> {{item.orderCode}} </td>
+                    <td class="text-center"> {{item.act}} </td>
+                    <!-- <td class="text-center"> {{item.modality}} </td> -->
+                    <td class="text-justify"> {{item.description}} </td>
+                    <td class="text-center">
+                        <a href="#" title="Editar" data-toggle="modal" data-target="#instrumentModal" ng-click="editItem(item)"><i class="fas fa-edit"></i></a><br>
+                        <a href="#" title="Excluir" ng-click="deleteItem('instrument', item)"><i class="fas fa-trash text-danger"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>

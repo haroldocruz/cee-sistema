@@ -1,0 +1,32 @@
+<!-- legendModal -->
+<div class="modal" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="legendModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="list-group">
+                    <a href class="list-group-item" data-dismiss="modal" ng-click="inserirLegenda('S')">
+                        <b>S</b>cope (Escopo)
+                    </a>
+                    <a href class="list-group-item" data-dismiss="modal" ng-click="inserirLegenda('C')">
+                        <b>C</b>ontext (Contexto)
+                    </a>
+                    <a href class="list-group-item" data-dismiss="modal" ng-click="inserirLegenda('V')">
+                        <b>V</b>alidation (Validação)
+                    </a>
+                    <a href class="list-group-item" data-dismiss="modal" ng-click="inserirLegenda('A')">
+                        <b>A</b>ll (Todos)
+                    </a>
+                    <a href class="list-group-item" data-dismiss="modal" ng-click="inserirLegenda(null)">
+                        Void (Vazio) <span class="label label-primary pull-right">Padrão</span>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

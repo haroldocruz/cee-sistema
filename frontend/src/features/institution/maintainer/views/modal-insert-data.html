@@ -1,0 +1,29 @@
+<!-- insertDataModal -->
+<div class="modal" id="insertDataModal" tabindex="-1" role="dialog" aria-labelledby="insertDataModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="form-insertData-modal">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li class="col-xs-12">
+                                {{  }}:
+                                <input ng-model="x.name" class="form-control">
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" ng-hide="x._id">Limpar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="createItem('acao', x)"
+                        ng-if="!x._id">Salvar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateItem('acao', x)"
+                        ng-if="x._id">Atualizar</button>
+                </div>
+            </form id="form-meta-modal">
+        </div>
+    </div>
+</div>

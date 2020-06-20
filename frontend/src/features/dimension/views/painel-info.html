@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class=""><i class="fa fa-info"></i> Informações</span>
+    </div>
+    <div class="panel-body ips-font-monospace">
+        <b>Descrição:</b> <br> {{item.descricao}}
+        <br>
+        <b>Observações:</b> <br> {{item.observacao}}
+        <br>
+        <b>Prazo oficial:</b> <br> {{item.prazo.oficial }}
+        <br>
+        <b>Prazo extra-oficial:</b> <br> {{item.prazo.extraOficial }}
+        <br>
+        <b>Indicadores:</b> <br> {{(!item._indicador)? 0 : item._indicador.length }}
+        <br>
+        <b>Estratégias:</b> <br> {{(!item._estrategia)? 0 : item._estrategia.length }}
+        <hr>
+        <div class="text-right">
+            <button class="btn btn-xs btn-default" ng-click="editItem(item)" data-toggle="modal"
+                data-target="#dimensionModal">
+                <i class="fa fa-edit"></i> Editar
+            </button>
+            <!-- <button class="btn btn-xs btn-danger" ng-click="deleteItem(item)">
+                <i class="fa fa-trash-alt"></i> Excluir
+            </button> -->
+        </div>
+        <br>
+        <!-- <a ui-sref="dimensionProfile({param1:item})" class="btn btn-default btn-block"> -->
+        <a href="/app/dimension/{{item.codigo}}" class="btn btn-default btn-block">
+            Ver mais sobre esta dimension
+        </a>
+    </div>
+</div>
