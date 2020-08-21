@@ -39,7 +39,7 @@
 
 ---
 
-> This application use _`REST`_ architecture, so it, is divided into two parts, [_frontend_](https://haroldocruz.github.io/cee-sistema-frontend) and [_backend_](https://haroldocruz.github.io/cee-sistema-backend), and each part has its respective _`quickstart`_.
+> This application use _`REST`_ architecture, so it, is divided into two parts, [_web_](https://haroldocruz.github.io/cee-sistema-web) and [_api_](https://haroldocruz.github.io/cee-sistema-api), and each part has its respective _`quickstart`_.
 
-* Go to [frontend page](https://haroldocruz.github.io/cee-sistema-frontend) or your [repo](https://github.com/haroldocruz/cee-sistema-frontend)
-* Go to [backend page](https://haroldocruz.github.io/cee-sistema-backend) or your [repo](https://github.com/haroldocruz/cee-sistema-backend)
+* Go to [web page](https://haroldocruz.github.io/cee-sistema-web) or your [repo](https://github.com/haroldocruz/cee-sistema-web)
+* Go to [api page](https://haroldocruz.github.io/cee-sistema-api) or your [repo](https://github.com/haroldocruz/cee-sistema-api)
